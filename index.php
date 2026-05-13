@@ -24,13 +24,18 @@ if (!empty($_GET)) {
     }
 
     if ($body == 3) {
-        $vysledek = "Máš 3 správné odpovědi z 3, jsi génius!";
-    } elseif ($body == 2) {
-        $vysledek = "Máš 2 správné odpovědi z 3, nejsi lůzr ani génius.";
-    } else {
-        $vysledek = "Máš $body správných odpovědí z 3, zkus to znovu!";
+        echo  "Máš 3 správné odpovědi z 3, jsi génius!";
+        echo "<img src=paradinda.jpg>";
+    } 
+    elseif ($body == 2) {
+        echo  "Máš 2 správné odpovědi z 3, nejsi lůzr ani génius.";
+        echo  "<img src=skoro.jpg>";
+    } 
+    elseif ($body <= 1 ) {
+        echo "Máš $body správných odpovědí z 3, zkus to znovu!";
+        echo "<img src=smula.jpg>";
     }
-}
+} 
 ?>
 
 
@@ -57,12 +62,6 @@ if (!empty($_GET)) {
 
     <button>Odeslat</button>
 </form>
-
-<?php
-if (!empty($_GET)) {
-    echo ($vysledek);
-}
-?>
 
 </body>
 </html>
